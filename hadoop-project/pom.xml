@@ -23,7 +23,7 @@
     <version>3.2.1</version>
   </parent>
   <artifactId>hadoop-project</artifactId>
-  <version>3.2.1</version>
+  <version>3.2.1-tlnd</version>
   <description>Apache Hadoop Project POM</description>
   <name>Apache Hadoop Project POM</name>
   <packaging>pom</packaging>
@@ -32,10 +32,9 @@
   <properties>
     <!-- Set the Release year during release -->
     <release-year>2019</release-year>
-
     <failIfNoTests>false</failIfNoTests>
     <maven.test.redirectTestOutputToFile>true</maven.test.redirectTestOutputToFile>
-    <jetty.version>9.3.24.v20180605</jetty.version>
+    <jetty.version>9.4.24.v20191120</jetty.version>
     <test.exclude>_</test.exclude>
     <test.exclude.pattern>_</test.exclude.pattern>
 

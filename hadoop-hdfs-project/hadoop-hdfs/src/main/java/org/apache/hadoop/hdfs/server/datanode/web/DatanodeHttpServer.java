@@ -75,6 +75,16 @@ import static org.apache.hadoop.hdfs.DFSConfigKeys.DFS_DATANODE_HTTP_ADDRESS_KEY
 import static org.apache.hadoop.hdfs.DFSConfigKeys.DFS_DATANODE_HTTP_INTERNAL_PROXY_PORT;
 
 public class DatanodeHttpServer implements Closeable {
+  static final Logger LOG = LoggerFactory.getLogger(DatanodeHttpServer.class);
+  private static final ConcurrentHashMap<Class<?>, Object> HANDLER_STATE
+      = new ConcurrentHashMap<Class<?>, Object>() {};
+  // HttpServer threads are only used for the web UI and basic servlets, so
+  // set them to the minimum possible
+  private static final int HTTP_SELECTOR_THREADS = 1;
+  private static final int HTTP_ACCEPTOR_THREADS = 1;
+  // Jetty 9.4.x: Adding one more thread to HTTP_MAX_THREADS.
+  private static final int HTTP_MAX_THREADS =
+      HTTP_SELECTOR_THREADS + HTTP_ACCEPTOR_THREADS + 2;
   private final HttpServer2 infoServer;
   private final EventLoopGroup bossGroup;
   private final EventLoopGroup workerGroup;

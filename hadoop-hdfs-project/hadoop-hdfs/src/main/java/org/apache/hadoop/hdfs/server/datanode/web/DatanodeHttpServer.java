@@ -22,6 +22,8 @@ import static org.apache.hadoop.hdfs.client.HdfsClientConfigKeys.DFS_WEBHDFS_RES
 
 import java.util.Enumeration;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -97,14 +99,6 @@ public class DatanodeHttpServer implements Closeable {
   private final RestCsrfPreventionFilter restCsrfPreventionFilter;
   private InetSocketAddress httpAddress;
   private InetSocketAddress httpsAddress;
-  static final Logger LOG = LoggerFactory.getLogger(DatanodeHttpServer.class);
-
-  // HttpServer threads are only used for the web UI and basic servlets, so
-  // set them to the minimum possible
-  private static final int HTTP_SELECTOR_THREADS = 1;
-  private static final int HTTP_ACCEPTOR_THREADS = 1;
-  private static final int HTTP_MAX_THREADS =
-      HTTP_SELECTOR_THREADS + HTTP_ACCEPTOR_THREADS + 1;
 
   public DatanodeHttpServer(final Configuration conf,
       final DataNode datanode,

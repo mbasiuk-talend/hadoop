@@ -23,7 +23,7 @@
     <version>3.2.1</version>
   </parent>
   <artifactId>hadoop-project</artifactId>
-  <version>3.2.1-tlnd</version>
+  <version>3.2.1</version>
   <description>Apache Hadoop Project POM</description>
   <name>Apache Hadoop Project POM</name>
   <packaging>pom</packaging>

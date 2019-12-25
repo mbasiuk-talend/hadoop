@@ -393,6 +393,7 @@
               <value>org.apache.hadoop.test.TimedOutTestsListener</value>
             </property>
           </properties>
+          <skipTests>true</skipTests>
         </configuration>
       </plugin>
       <plugin>

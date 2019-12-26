@@ -24,7 +24,7 @@
     <relativePath>../../hadoop-project-dist</relativePath>
   </parent>
   <artifactId>hadoop-common</artifactId>
-  <version>3.2.1-talend</version>
+  <version>3.2.1-talend20191226</version>
   <description>Apache Hadoop Common</description>
   <name>Apache Hadoop Common</name>
   <packaging>jar</packaging>

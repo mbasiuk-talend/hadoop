@@ -24,7 +24,7 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <relativePath>../../hadoop-project-dist</relativePath>
   </parent>
   <artifactId>hadoop-hdfs</artifactId>
-  <version>3.2.1-talend</version>
+  <version>3.2.1-talend20191226</version>
   <description>Apache Hadoop HDFS</description>
   <name>Apache Hadoop HDFS</name>
   <packaging>jar</packaging>
